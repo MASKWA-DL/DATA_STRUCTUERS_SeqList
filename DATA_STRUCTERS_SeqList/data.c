@@ -5,10 +5,10 @@
 typedef int ElemType;
 
 
-typedef struct {
+/*typedef struct {
 	ElemType* data1;
 	int length1;
-}SeqList1;
+}SeqList1;*/
 
 
 
@@ -17,39 +17,39 @@ SeqList1* initList1() {
 	L->data1 = (ElemType*)malloc(sizeof(ElemType) * MAXSIZE);
 	L->length1 = 0;
 	return L;
-}//¶¯Ì¬ÄÚ´æ·ÖÅä³õÊ¼»¯
+}//åŠ¨æ€å†…å­˜åˆ†é…åˆå§‹åŒ–
 
 
 
 typedef struct {
 	ElemType data[MAXSIZE];
 	int length;
-}SeqList;//Õâ¾ÍÊÇÒ»¸öË³Ğò±í
+}SeqList;//è¿™å°±æ˜¯ä¸€ä¸ªé¡ºåºè¡¨
 
 
 
 void initList(SeqList* L) {
 	L->length = 0;
-}//Ë³Ğò±íµÄ³õÊ¼»¯
+}//é¡ºåºè¡¨çš„åˆå§‹åŒ–
 
 
 
 int append(SeqList* L, ElemType e) {
 	if (L->length >= MAXSIZE) {
-		printf("Ë³Ğò±íÒÑÂú\n");
+		printf("é¡ºåºè¡¨å·²æ»¡\n");
 		return 0;
 	}
 	L->data[L->length] = e;
 	L->length++;
 	return 1;
-}//Î²²¿Ìí¼ÓÔªËØ
+}//å°¾éƒ¨æ·»åŠ å…ƒç´ 
 
 
 void listElem(SeqList* L) {
 	for (int i = 0; i < L->length; i++) {
 		printf("%d\n", L->data[i]);
 	}
-}//±éÀú
+}//éå†
 
 
 
@@ -62,8 +62,8 @@ void insertElem(SeqList* L, int pos, ElemType e) {
 		L->length++;
 	}
 	else
-		printf("ÇëÊäÈëÕıÈ·µÄ²åÈëÎ»ÖÃ");
-}//²åÈëÔªËØ£¬´ÓºóÍùÇ°¸´ÖÆ
+		printf("è¯·è¾“å…¥æ­£ç¡®çš„æ’å…¥ä½ç½®");
+}//æ’å…¥å…ƒç´ ï¼Œä»åå¾€å‰å¤åˆ¶
 
 
 
@@ -72,7 +72,7 @@ void deleteElem(SeqList* L, int pos) {
 		L->data[i] = L->data[i + 1];
 	}
 	L->length--;
-}//É¾³ıÔªËØ
+}//åˆ é™¤å…ƒç´ 
 
 
 int findElem(SeqList* L, int e) {
@@ -82,7 +82,7 @@ int findElem(SeqList* L, int e) {
 		}
 	}
 	return -1;
-}//²éÕÒÔªËØ
+}//æŸ¥æ‰¾å…ƒç´ 
 
 
 
@@ -95,12 +95,12 @@ int main() {
 	append(&s, 40);
 	insertElem(&s, 2, 15);
 	listElem(&s);
-	printf("É¾ºóµÄ\n");
+	printf("åˆ åçš„\n");
 	deleteElem(&s, 4);
 	listElem(&s);
 	printf("%d\n", findElem(&s, 25));
 	printf("%d\n", findElem(&s, 20));
 	SeqList1* s1 = initList1();
-	printf("Íê³É");
+	printf("å®Œæˆ");
 }
 #define _CRT_SECURE_NO_WARNINGS 1
