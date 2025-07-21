@@ -103,4 +103,3 @@ int main() {
 	SeqList1* s1 = initList1();
 	printf("完成");
 }
-#define _CRT_SECURE_NO_WARNINGS 1
